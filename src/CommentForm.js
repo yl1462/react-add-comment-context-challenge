@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
+import CommentsContext from './CommentsContext'
 
 export default class CommentForm extends Component {
-  // static contextType = CommentsContext
+  static contextType = CommentsContext
 
   handleSubmit = (ev) => {
     ev.preventDefault()
     const { author, comment } = ev.target
 
     /* change code */
-
-    console.log({
+    this.context.addComment({
       author: author.value,
       comment: comment.value,
     })
